@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin - Ziterainvestment</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#0a0a0a;color:#fff;padding:20px}
+h1{color:#FFD700;margin-bottom:20px}
+.card{background:#111;padding:20px;border-radius:12px;margin-bottom:20px;border:1px solid #FFD700}
+.btn{padding:12px;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;border:none;border-radius:8px;cursor:pointer;font-weight:bold}
+input{padding:10px;background:#222;color:#fff;border:1px solid #444;border-radius:8px;margin-right:10px}
+.withdraw-item{background:#222;padding:15px;margin:10px 0;border-radius:8px}
+</style>
+</head>
+<body>
+<h1>ADMIN PANEL</h1>
+<div class="card">
+<h3>Credit User Balance</h3>
+<input id="creditEmail" placeholder="User Email">
+<input id="creditAmount" placeholder="BTC Amount" type="number">
+<button class="btn" onclick="creditUser()">Credit BTC</button>
+</div>
+<div class="card">
+<h3>Pending Withdrawals</h3>
+<div id="withdrawals">Loading...</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></
