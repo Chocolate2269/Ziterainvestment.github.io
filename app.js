@@ -1,35 +1,60 @@
-const SUPABASE_URL = 'https://yalkrylojpuisxpavdeb.supabase.co'
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlhbGtyeWxvanB1aXN4cGF2ZGViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYyOTUwODAsImV4cCI6MjEwMTg3MTA4MH0.Dz9N3A8LvAiLmKMOd6psjU2R1PIyl98IZSdmCMSJ7Aw'
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+// app.js - Ziterainvestment
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-async function handleAuth() {
+// 1. PUT YOUR SUPABASE DETAILS HERE
+const SUPABASE_URL = 'https://your-project-ref.supabase.co'
+const SUPABASE_ANON_KEY = 'eyJhbGc...' // your anon public key
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
+const GITHUB_PATH = 'https://chocolate2269.github.io/Ziterainvestment.github.io'
+
+// 2. SIGN UP FUNCTION
+window.signUp = async function() {
   const email = document.getElementById('email').value
   const password = document.getElementById('password').value
-  const msg = document.getElementById('msg')
 
-  if(!email || !password) { msg.style.color='red'; msg.innerText = 'Please enter email and password'; return }
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      emailRedirectTo: `${GITHUB_PATH}/dashboard.html`
+    }
+  })
 
-  msg.style.color='#FFD700'; msg.innerText = 'Loading...'
-  
-  // Try Signup first
-  let { data, error } = await supabase.auth.signUp({ email, password })
-  
-  // If user already exists, Login
-  if(error && error.message.includes("already registered")) {
-    let result = await supabase.auth.signInWithPassword({ email, password })
-    data = result.data
-    error = result.error
-  }
-
-  if(error) { 
-    msg.style.color='red'; msg.innerText = 'Error: ' + error.message 
+  if (error) {
+    alert('Signup Error: ' + error.message)
+    console.log(error)
   } else {
-    msg.style.color='lime'; msg.innerText = 'Success! Redirecting...'
-    setTimeout(() => window.location.href = 'dashboard.html', 1200)
+    alert('Account created! Redirecting...')
+    // If email confirm is OFF in Supabase, this will work instantly
+    window.location.href = `${GITHUB_PATH}/dashboard.html`
   }
 }
 
-// If already logged in, skip login page
-supabase.auth.getSession().then(({ data: { session }}) => {
-  if(session) window.location.href = 'dashboard.html'
-})
+// 3. LOGIN FUNCTION  
+window.login = async function() {
+  const email = document.getElementById('email').value
+  const password = document.getElementById('password').value
+
+  const { data, error } = await supabase.auth.signInWithPassword({email, password})
+
+  if (error) {
+    alert('Login Error: ' + error.message)
+  } else {
+    window.location.href = `${GITHUB_PATH}/dashboard.html`
+  }
+}
+
+// 4. LOGOUT FUNCTION
+window.logout = async function() {
+  await supabase.auth.signOut()
+  window.location.href = `${GITHUB_PATH}/index.html`
+}
+
+// 5. CHECK IF USER IS LOGGED IN ON DASHBOARD
+window.checkUser = async function() {
+  const { data: { session } } = await supabase.auth.getSession()
+  if (!session) {
+    window.location.href = `${GITHUB_PATH}/index.html`
+  }
+}
