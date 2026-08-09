@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dashboard - Ziterainvestment</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#0a0a0a;color:#fff;padding:20px}
+h1{color:#FFD700;margin-bottom:20px}
+.card{background:#111;padding:20px;border-radius:12px;margin-bottom:20px;border:1px solid #222}
+.balance{font-size:32px;color:#FFD700;font-weight:bold}
+.btn{padding:12px 20px;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;border:none;border-radius:8px;cursor:pointer;font-weight:bold}
+input{width:100%;padding:10px;margin:8px 0;background:#222;color:#fff;border:1px solid #444;border-radius:8px}
+</style>
+</head>
+<body>
+<h1>Dashboard</h1>
+<div class="card">
+<h3>BTC Balance</h3>
+<div class="balance" id="balance">0 BTC</div>
+</div>
+<div class="card">
+<h3>Deposit</h3>
+<input id="depositAmount" type="number" placeholder="BTC Amount">
+<button class="btn" onclick="makeDeposit()">Request Deposit</button>
+</div>
+<div class="card">
+<h3>Withdraw</h3>
+<input id="withdrawAmount" placeholder="BTC Amount">
+<input id="withdrawAddress" placeholder="BTC Address">
+<button class="btn" onclick="makeWithdrawal()">Request Withdraw</button>
+</div>
+<div class="card">
+<h3>Investment Plans</h3>
+<div id="plans">Loading...</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+</body>
+</html>
