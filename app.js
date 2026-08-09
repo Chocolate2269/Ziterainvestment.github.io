@@ -1,9 +1,8 @@
-// app.js - Ziterainvestment
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-// 1. PUT YOUR SUPABASE DETAILS HERE
-const SUPABASE_URL = 'https://your-project-ref.supabase.co'
-const SUPABASE_ANON_KEY = 'eyJhbGc...' // your anon public key
+// 1. YOUR SUPABASE DETAILS
+const SUPABASE_URL = 'https://gnirwxegxvujdimwpxyr.supabase.co'
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImduaXJ3eGVneHZ1amRpbXdweXhyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYyMjgwODcsImV4cCI6MjEwMTgwNDA4N30.0MdYpV1poixDu02H1A1_GomnHN3oUSV5__ZVY1QGKzI'
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
 
 const GITHUB_PATH = 'https://chocolate2269.github.io/Ziterainvestment.github.io'
