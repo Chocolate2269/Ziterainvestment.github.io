@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ziterainvestment - Login</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial}
+body{background:#0A0A0A;color:#fff;display:flex;justify-content:center;align-items:center;height:100vh}
+.container{background:#111;padding:40px;border-radius:12px;width:90%;max-width:400px;text-align:center;border:1px solid #FFD70033}
+h1{color:#FFD700;margin-bottom:20px;font-size:24px}
+input{width:100%;padding:12px;margin:10px 0;background:#222;color:#fff;border:1px solid #333;border-radius:8px;outline:none}
+input:focus{border-color:#FFD700}
+button{width:100%;padding:14px;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;border:none;border-radius:8px;font-weight:bold;cursor:pointer;font-size:16px;margin-top:10px}
+button:hover{opacity:0.9}
+#msg{margin-top:15px;font-size:14px}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<div class="container">
+  <h1>ZITERAINVESTMENT</h1>
+  <input id="email" type="email" placeholder="Enter Email" required>
+  <input id="password" type="password" placeholder="Enter Password" required>
+  <button onclick="handleAuth()">Sign Up / Login</button>
+  <p id="msg"></p>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
