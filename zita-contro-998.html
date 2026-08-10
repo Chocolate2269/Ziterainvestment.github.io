@@ -1,6 +1,56 @@
 <!DOCTYPE html>
-<html>
-<head><title>Admin Control</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zitera Control 998</title>
 <style>
-body{background:#0A0A0A;color:#fff;padding:20px;font
-     
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#000;color:#fff;padding:20px}
+.header{background:#111;border-bottom:3px solid #FFD700;padding:20px;margin-bottom:30px}
+.header h1{color:#FFD700;font-size:28px}
+.container{max-width:1200px;margin:0 auto}
+.card{background:#111;border:1px solid #FFD700;padding:25px;border-radius:15px;margin-bottom:25px}
+.card h2{color:#FFD700;margin-bottom:15px}
+input{padding:12px;background:#000;border:1px solid #333;color:#fff;border-radius:8px;margin-right:10px;width:250px}
+.btn{background:#FFD700;color:#000;border:0;padding:12px 20px;border-radius:8px;font-weight:800;cursor:pointer}
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th{background:#FFD700;color:#000;padding:12px;text-align:left}
+td{padding:12px;border-bottom:1px solid #333}
+.approve{background:#0ddf8f;color:#000;padding:8px 15px;border:0;border-radius:6px;cursor:pointer;font-weight:700}
+.danger{background:#ff4444;color:#fff;padding:8px 15px;border:0;border-radius:6px;cursor:pointer;font-weight:700}
+</style>
+</head>
+<body>
+
+<div class="header">
+<h1>ZITERA CONTROL PANEL 998</h1>
+</div>
+
+<div class="container">
+<!-- CREDIT USERS -->
+<div class="card">
+<h2>💰 Credit User Balance</h2>
+<input type="email" id="email" placeholder="User Email">
+<input type="number" id="amount" placeholder="Amount $">
+<button class="btn" onclick="creditUser()">Credit Balance</button>
+</div>
+
+<!-- PENDING WITHDRAWALS -->
+<div class="card">
+<h2>📤 Pending Withdrawals</h2>
+<table>
+<tr><th>Email</th><th>Amount</th><th>Action</th></tr>
+<tr>
+<td>test@gmail.com</td><td>$50.00</td>
+<td>
+<button class="approve" onclick="approveWithdrawal(this)">Approve</button> 
+<button class="danger" onclick="rejectWithdrawal(this)">Reject</button>
+</td>
+</tr>
+</table>
+</div>
+</div>
+
+<script src="app.js"></script>  <!-- THIS CONNECTS APP.JS -->
+</body>  <!-- THIS ENDS THE PAGE -->
+</html>     
