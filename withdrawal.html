@@ -12,17 +12,16 @@ header{padding:15px 20px;background:#111;border-bottom:2px solid #FFD700;display
 .logo-icon{width:45px;height:45px;border-radius:10px;background:linear-gradient(135deg,#FFD700,#FFA500);display:flex;align-items:center;justify-content:center;font-weight:bold;color:#000;font-size:24px}
 .logo h3{color:#FFD700}
 nav a{color:#FFD700;margin:0 12px;text-decoration:none;font-weight:bold}
-.container{max-width:800px;margin:50px auto;padding:20px}
-h1{text-align:center;font-size:36px;margin-bottom:30px;background:linear-gradient(90deg,#FFD700,#f093fb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.withdraw-box{background:#1a1a1a;border:2px solid #FFD700;border-radius:20px;padding:40px}
-.steps{margin:30px 0}
-.step{background:#111;border-left:4px solid #FFD700;padding:20px;margin:15px 0;border-radius:10px}
-.step-number{background:#FFD700;color:#000;width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:bold;margin-right:10px}
+.container{max-width:900px;margin:50px auto;padding:20px}
+h1{text-align:center;font-size:36px;margin-bottom:10px;background:linear-gradient(90deg,#FFD700,#f093fb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{text-align:center;color:#aaa;margin-bottom:40px}
+.withdraw-box{background:#1a1a1a;border:2px solid #FFD700;border-radius:20px;padding:40px;margin-bottom:40px}
 .rules{background:#111;border:1px dashed #FFD700;padding:20px;border-radius:15px;margin:30px 0}
-.rules li{margin:10px 0;color:#ccc}
-.btn{background:#FFD700;color:#000;padding:15px 40px;border-radius:50px;text-decoration:none;font-weight:bold;display:inline-block;margin-top:20px;border:none;cursor:pointer;font-size:16px;width:100%}
-.btn:hover{transform:scale(1.02)}
-.note{color:#ffaa00;text-align:center;margin-top:15px;font-size:14px}
+.btn{background:#FFD700;color:#000;padding:15px 40px;border-radius:50px;text-decoration:none;font-weight:bold;display:inline-block;margin-top:20px;border:none;cursor:pointer;font-size:16px;width:100%;text-align:center}
+.proof-box{background:#111;border:2px solid #00ff88;border-radius:20px;padding:30px}
+.proof-item{display:flex;justify-content:space-between;align-items:center;background:#0A0A0A;padding:15px;border-radius:10px;margin:10px 0;border-left:3px solid #00ff88}
+.proof-amount{color:#FFD700;font-weight:bold;font-size:18px}
+.live-badge{background:#00ff88;color:#000;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:bold}
 footer{text-align:center;padding:40px;background:#111;border-top:2px solid #FFD700;color:#888;margin-top:50px}
 </style>
 </head>
@@ -37,72 +36,22 @@ footer{text-align:center;padding:40px;background:#111;border-top:2px solid #FFD7
   </div>
   <nav>
     <a href="index.html">Home</a>
-    <a href="index.html#plans">Plans</a>
-    <a href="withdraw.html">Withdraw</a>
-    <a href="about.html">About</a>
+    <a href="withdrawal.html">Withdraw</a>
   </nav>
 </header>
 
 <div class="container">
   <h1>💸 Withdraw Your Earnings</h1>
+  <p class="subtitle">Fast, Secure, and 0% Fees</p>
 
   <div class="withdraw-box">
-    <h2 style="color:#FFD700;margin-bottom:20px">Fast & Secure Withdrawals</h2>
-    <p>All withdrawals are processed within 5-30 minutes to your wallet. No hidden fees.</p>
-
-    <div class="steps">
-      <div class="step">
-        <span class="step-number">1</span>
-        <b>Go to Dashboard</b>
-        <p>Login to your account and click "Withdraw" button</p>
-      </div>
-      <div class="step">
-        <span class="step-number">2</span>
-        <b>Enter Amount</b>
-        <p>Minimum withdrawal: $10. Maximum: $50,000</p>
-      </div>
-      <div class="step">
-        <span class="step-number">3</span>
-        <b>Enter Wallet Address</b>
-        <p>BTC, USDT TRC20, or ETH wallet. Double check address!</p>
-      </div>
-      <div class="step">
-        <span class="step-number">4</span>
-        <b>Get Paid</b>
-        <p>Funds arrive in 5-30 minutes. You’ll get email confirmation.</p>
-      </div>
-    </div>
+    <h2 style="color:#FFD700;margin-bottom:20px">How To Withdraw</h2>
+    <p>1. Click button below<br>2. Send amount + wallet on WhatsApp<br>3. Approved in 5-30 minutes<br>4. Funds sent to your wallet</p>
 
     <div class="rules">
       <h3 style="color:#FFD700;margin-bottom:15px">📋 Withdrawal Rules</h3>
-      <ul>
-        <li>✓ Minimum Withdrawal: $10</li>
-        <li>✓ Processing Time: 5 - 30 minutes</li>
-        <li>✓ Withdrawal Fee: 0% - We cover network fees</li>
-        <li>✓ Available 24/7 including weekends</li>
-        <li>✓ KYC may be required for withdrawals above $1000</li>
-      </ul>
+      <p>✓ Min: $10 | Max: $50,000 | Fee: 0% | Time: 5-30 minutes</p>
     </div>
 
-    <button class="btn" onclick="alert('Connect this to your dashboard login')">Request Withdrawal</button>
-    <p class="note">Need help? Use the live chat bottom right 💬</p>
+    <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="btn">Request Withdrawal on WhatsApp</a>
   </div>
-</div>
-
-<footer>
-  <p>© 2025 Ziterainvestment. All Rights Reserved.</p>
-</footer>
-
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/605165194/default'; // <-- Replace with your Tawk ID
-s1.charset='UTF-8';s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-
-</body>
-</html>
