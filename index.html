@@ -35,6 +35,13 @@ h2{font-size:36px;text-align:center;margin-bottom:40px;background:linear-gradien
 .features li{padding:10px 0;color:#ccc;border-bottom:1px dashed #333}
 .features li:before{content:"✓ ";color:#FFD700}
 
+/* PROMO SECTION */
+.promo-banner{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:40px;border-radius:20px;text-align:center;margin-bottom:40px}
+.promo-banner h3{font-size:32px;margin-bottom:10px}
+.refer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.refer-card{background:#111;border:2px solid #FFD700;padding:25px;border-radius:15px;text-align:center}
+.refer-percent{font-size:48px;font-weight:bold;color:#FFD700}
+
 /* PAYMENT SECTION */
 .payment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:40px}
 .payment-card{background:#111;border:2px solid #333;padding:25px;border-radius:15px;text-align:center}
@@ -42,7 +49,6 @@ h2{font-size:36px;text-align:center;margin-bottom:40px;background:linear-gradien
 .payment-icon{font-size:50px;margin-bottom:15px}
 .wallet-box{background:#0A0A0A;border:1px dashed #FFD700;padding:15px;border-radius:10px;margin:15px 0;word-break:break-all;font-size:14px;color:#FFD700}
 .copy-btn{background:#FFD700;color:#000;border:none;padding:10px 20px;border-radius:8px;font-weight:bold;cursor:pointer;margin-top:10px}
-.note{background:#1a1a1a;border-left:4px solid #FFD700;padding:20px;margin:30px 0;border-radius:10px;color:#ccc}
 
 footer{text-align:center;padding:40px;background:#111;border-top:2px solid #FFD700;color:#888}
 @media(max-width:768px){nav{display:none}}
@@ -53,7 +59,7 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
-s1.src='https://embed.tawk.to/605165194/default';
+s1.src='https://embed.tawk.to/605165194/default'; // <-- Replace with your Tawk ID
 s1.charset='UTF-8';s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
@@ -75,6 +81,7 @@ function copyWallet(id) {
   <nav>
     <a href="#stats">Stats</a>
     <a href="#plans">Plans</a>
+    <a href="#promo">Promo</a>
     <a href="#payment">Deposit</a>
     <a href="about.html">About</a>
   </nav>
@@ -100,24 +107,4 @@ function copyWallet(id) {
   <h2>Investment Plans</h2>
   <div class="grid">
     <div class="card"><h3>Starter Plan</h3><div class="plan-price">$50</div><ul class="features"><li>3% Daily Profit</li><li>7 Days Duration</li><li>Instant Withdrawal</li></ul><a href="#payment" class="btn">Invest Now</a></div>
-    <div class="card plan-pro"><h3>Pro Plan</h3><div class="plan-price">$200</div><ul class="features"><li>5% Daily Profit</li><li>14 Days Duration</li><li>Priority Support</li></ul><a href="#payment" class="btn">Invest Now</a></div>
-    <div class="card"><h3>VIP Plan</h3><div class="plan-price">$1000</div><ul class="features"><li>8% Daily Profit</li><li>30 Days Duration</li><li>VIP Support</li></ul><a href="#payment" class="btn">Invest Now</a></div>
-  </div>
-</div>
-
-<!-- PAYMENT SECTION -->
-<div class="container" id="payment">
-  <h2>Deposit Funds</h2>
-  <p style="text-align:center;color:#ccc;margin-bottom:30px">Choose your preferred payment method. After payment, contact support to activate your plan.</p>
-
-  <div class="payment-grid">
-    <div class="payment-card">
-      <div class="payment-icon">₿</div>
-      <h3>Bitcoin BTC</h3>
-      <p>Send BTC to this wallet:</p>
-      <div class="wallet-box" id="btc">bc1qxy2kga5w2zq3wxyz1234567890abcdef</div>
-      <button class="copy-btn" onclick="copyWallet('btc')">Copy Wallet</button>
-    </div>
-
-    <div class="payment-card">
-      <div class="payment-icon">
+    <div class="card plan-pro"><h3>Pro Plan</h3><div class="plan-price">$200</div><ul class="features"><li>5% Daily Profit</li><li>14 Days Duration</li><li>Priority Support</li></ul><a href="#payment" class="btn
