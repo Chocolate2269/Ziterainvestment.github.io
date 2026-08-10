@@ -1,50 +1,84 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zitera Investment - Crypto Trading</title><style>
+<title>Zitera Investment</title><style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
 body{background:#000;color:#fff}
-.header{background:#111;border-bottom:3px solid #FFD700;padding:20px;text-align:center}
-.header h1{color:#FFD700;font-size:28px;font-weight:800}
-.hero{padding:60px 20px;text-align:center;background:linear-gradient(180deg,#111,#000)}
-.hero h2{font-size:32px;color:#FFD700;margin-bottom:15px}
-.hero p{color:#aaa;font-size:16px;margin-bottom:25px}
-.btn{background:#FFD700;color:#000;padding:15px 35px;border-radius:10px;text-decoration:none;font-weight:800;font-size:18px;display:inline-block}
-.features{padding:40px 20px;display:grid;grid-template-columns:1fr;gap:20px;max-width:800px;margin:auto}
-.card{background:#111;padding:25px;border-radius:15px;border:1px solid #333}
-.card h3{color:#FFD700;margin-bottom:10px}
-.footer{padding:30px;text-align:center;background:#111;color:#666;font-size:14px}
+header{background:#000;padding:20px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #FFD700;position:sticky;top:0;z-index:999}
+header h1{color:#FFD700;font-size:24px}
+nav a{color:#FFD700;text-decoration:none;font-weight:600;margin-left:20px}
+.hero{text-align:center;padding:100px 20px;background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8))}
+.hero h1{font-size:48px;color:#FFD700;margin-bottom:20px}
+.hero p{font-size:18px;color:#ccc;margin-bottom:30px}
+.btn{display:inline-block;padding:15px 35px;margin:10px;border-radius:8px;text-decoration:none;font-weight:800;font-size:18px}
+.btn-gold{background:#FFD700;color:#000}
+.btn-outline{background:transparent;color:#FFD700;border:2px solid #FFD700}
+section{padding:60px 20px}
+h2{text-align:center;color:#FFD700;font-size:32px;margin-bottom:30px}
 </style></head>
 <body>
 
-<div class="header">
-<h1>ZITERA INVESTMENT</h1>
-</div>
+<!-- NAVBAR -->
+<header>
+  <h1>ZITERA</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#plans">Plans</a>
+    <a href="#contact">Contact</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>
 
+<!-- HERO / HOME -->
 <div class="hero">
-<h2>Grow Your Crypto With Us</h2>
-<p>Safe, Fast, and Profitable Trading Platform</p>
-<a href="login.html" class="btn">GET STARTED</a>
+  <h1>ZITERA INVESTMENT</h1>
+  <p>Grow your money with 5% - 15% Weekly Returns. Safe, Fast & Trusted.</p>
+  <a href="signup.html" class="btn btn-gold">SIGN UP</a>
+  <a href="login.html" class="btn btn-outline">LOGIN</a>
 </div>
 
-<div class="features">
-<div class="card">
-<h3>💰 High ROI</h3>
-<p>Earn up to 15% weekly on your deposits</p>
-</div>
-<div class="card">
-<h3>⚡ Fast Withdrawals</h3>
-<p>Get your profits within 24 hours</p>
-</div>
-<div class="card">
-<h3>🔒 Secure</h3>
-<p>Your funds are 100% protected</p>
-</div>
-</div>
+<!-- ABOUT -->
+<section id="about" style="background:#111;text-align:center">
+  <h2>ABOUT US</h2>
+  <p style="max-width:700px;margin:0 auto 30px;color:#ccc;line-height:1.8">
+  Zitera Investment is a trusted platform for crypto and forex investment.
+  We help investors grow their portfolio with expert trading and guaranteed weekly profits.
+  Join thousands of investors earning with us today.
+  </p>
+  <a href="signup.html" class="btn btn-gold">JOIN NOW</a>
+</section>
 
-<div class="footer">
-© 2026 Zitera Investment. All Rights Reserved
-</div>
+<!-- PLANS -->
+<section id="plans" style="background:#000">
+  <h2>OUR INVESTMENT PLANS</h2>
+  <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+    <div style="border:2px solid #FFD700;border-radius:15px;padding:30px;width:280px;background:#111;text-align:center">
+      <h3 style="color:#FFD700">STARTER</h3>
+      <h1 style="color:#fff">$50 - $499</h1>
+      <p style="color:#ccc">5% Weekly</p>
+      <a href="signup.html" class="btn btn-gold" style="padding:12px">Get Started</a>
+    </div>
+    <div style="border:2px solid #FFD700;border-radius:15px;padding:30px;width:280px;background:#111;text-align:center">
+      <h3 style="color:#FFD700">PRO</h3>
+      <h1 style="color:#fff">$500 - $4999</h1>
+      <p style="color:#ccc">10% Weekly</p>
+      <a href="signup.html" class="btn btn-gold" style="padding:12px">Get Started</a>
+    </div>
+    <div style="border:2px solid #FFD700;border-radius:15px;padding:30px;width:280px;background:#111;text-align:center">
+      <h3 style="color:#FFD700">VIP</h3>
+      <h1 style="color:#fff">$5000+</h1>
+      <p style="color:#ccc">15% Weekly</p>
+      <a href="signup.html" class="btn btn-gold" style="padding:12px">Get Started</a>
+    </div>
+  </div>
+</section>
 
-<!--Start of Tawk.to Script-->
+<!-- CONTACT -->
+<section id="contact" style="background:#111;text-align:center">
+  <h2>CONTACT US</h2>
+  <p style="color:#ccc;margin-bottom:20px">Need help? Chat with us anytime</p>
+  <p style="color:#fff;font-size:18px">📧 support@zitera.com</p>
+</section>
+
+<!-- TAWK CHAT -->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -56,6 +90,5 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
 
 </body></html>
