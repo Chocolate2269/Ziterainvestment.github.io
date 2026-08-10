@@ -3,29 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ziterainvestment - Login</title>
+<title>Ziterainvestment - Grow Your Money Daily</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial}
-body{background:#0A0A0A;color:#fff;display:flex;justify-content:center;align-items:center;height:100vh}
-.container{background:#111;padding:40px;border-radius:12px;width:90%;max-width:400px;text-align:center;border:1px solid #FFD700}
-h1{color:#FFD700;margin-bottom:20px;font-size:24px}
-input{width:100%;padding:12px;margin:10px 0;background:#222;color:#fff;border:1px solid #444;border-radius:5px}
-input:focus{border-color:#FFD700;outline:none}
-button{width:100%;padding:14px;background:linear-gradient(135deg,#FFD700,#FFA500);border:none;border-radius:5px;color:#000;font-weight:bold;font-size:16px;cursor:pointer;margin-top:10px}
-button:hover{opacity:0.9}
-#msg{margin-top:15px;font-size:14px;color:#FFA500}
+body{background:#0A0A0A;color:#fff}
+header{padding:15px 20px;background:rgba(17,17,17,0.95);border-bottom:2px solid #FFD700;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{width:45px;height:45px;border-radius:10px;box-shadow:0 0 15px rgba(255,215,0,0.5)}
+.logo h3{color:#FFD700;font-size:20px}
+.us-tag{font-size:11px;color:#fff;background:#002868;padding:3px 8px;border-radius:10px;margin-left:5px}
+nav a{color:#FFD700;margin:0 12px;text-decoration:none;font-weight:bold}
+.hero{text-align:center;padding:100px 20px;background:linear-gradient(135deg,#667eea 0%,#764ba2 25%,#f093fb 50%,#f5576c 75%,#FFD700 100%);background-size:400% 400%;animation:gradient 8s ease infinite}
+@keyframes gradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero h1{font-size:52px;text-shadow:2px 2px 20px rgba(0,0,0,0.5)}
+.hero p{font-size:20px;margin:15px 0 30px}
+.btn{background:#FFD700;color:#000;padding:18px 40px;border-radius:50px;text-decoration:none;font-weight:bold;display:inline-block;margin-top:20px;box-shadow:0 10px 30px rgba(255,215,0,0.4)}
+.container{max-width:1200px;margin:0 auto;padding:80px 20px}
+h2{font-size:36px;text-align:center;margin-bottom:40px;background:linear-gradient(90deg,#FFD700,#f093fb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
+.stat-card{background:#1a1a1a;border:2px solid #FFD700;padding:30px;border-radius:20px;text-align:center}
+.stat-number{font-size:42px;font-weight:bold;color:#FFD700;margin:10px 0}
+.stat-label{color:#ccc}
+.live-dot{display:inline-block;width:10px;height:10px;background:#00ff88;border-radius:50%;margin-right:8px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+.card{background:#1a1a1a;border:1px solid #333;padding:30px;border-radius:20px;text-align:center}
+.plan-pro{border:2px solid #FFD700;transform:scale(1.05)}
+.plan-price{font-size:36px;font-weight:bold;color:#FFD700;margin:15px 0}
+.features{list-style:none;text-align:left;margin:20px 0}
+.features li{padding:10px 0;color:#ccc;border-bottom:1px dashed #333}
+.features li:before{content:"✓ ";color:#FFD700}
+footer{text-align:center;padding:40px;background:#111;border-top:2px solid #FFD700;color:#888}
+@media(max-width:768px){nav{display:none}}
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/605165194/default';
+s1.charset='UTF-8';s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 </head>
 <body>
-<div class="container">
-  <h1>ZITERAINVESTMENT</h1>
-  <input id="email" type="email" placeholder="Enter Email" required>
-  <input id="password" type="password" placeholder="Enter Password" required>
-  <button onclick="signUp()">Sign Up</button>
-  <button onclick="signIn()">Login</button>
-  <p id="msg"></p>
+
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Logo">
+    <h3>Ziterainvestment<span class="us-tag">🇺🇸 USA</span></h3>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Ziterainvestment</h1>
+  <p>Grow Your Money Daily. Secure. Fast. Trusted.</p>
+  <a href="#stats" class="btn">🚀 Start Investing Now</a>
 </div>
-<script src="app.js"></script>
+
+<div class="container" id="stats">
+  <h2><span class="live-dot"></span>Live Platform Statistics</h2>
+  <div class="stats">
+    <div class="stat-card"><div class="stat-number">12,847</div><div class="stat-label">Active Investors</div></div>
+    <div class="stat-card"><div class="stat-number">$4.2M</div><div class="stat-label">Total Paid Out</div></div>
+    <div class="stat-card"><div class="stat-number">1,203</div><div class="stat-label">Online Now</div></div>
+    <div class="stat-card"><div class="stat-number">98.7%</div><div class="stat-label">Success Rate</div></div>
+  </div>
+</div>
+
+<div class="container" id="plans">
+  <h2>Investment Plans</h2>
+  <div class="grid">
+    <div class="card"><h3>Starter Plan</h3><div class="plan-price">$50</div><ul class="features"><li>3% Daily Profit</li><li>7 Days Duration</li><li>Instant Withdrawal</li></ul><a href="#" class="btn">Invest Now</a></div>
+    <div class="card plan-pro"><h3>Pro Plan</h3><div class="plan-price">$200</div><ul class="features"><li>5% Daily Profit</li><li>14 Days Duration</li><li>Priority Support</li></ul><a href="#" class="btn">Invest Now</a></div>
+    <div class="card"><h3>VIP Plan</h3><div class="plan-price">$1000</div><ul class="features"><li>8% Daily Profit</li><li>30 Days Duration</li><li>VIP Support</li></ul><a href="#" class="btn">Invest Now</a></div>
+  </div>
+</div>
+
+<footer><p>© 2026 Ziterainvestment LLC. Registered in United States. All Rights Reserved.</p></footer>
 </body>
-</html>
+                                                                                                                                                          </html>
