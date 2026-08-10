@@ -9,7 +9,7 @@
 body{background:#0A0A0A;color:#fff}
 header{padding:15px 20px;background:rgba(17,17,17,0.95);border-bottom:2px solid #FFD700;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
 .logo{display:flex;align-items:center;gap:10px}
-.logo img{width:45px;height:45px;border-radius:10px;box-shadow:0 0 15px rgba(255,215,0,0.5)}
+.logo-icon{width:45px;height:45px;border-radius:10px;background:linear-gradient(135deg,#FFD700,#FFA500);display:flex;align-items:center;justify-content:center;font-weight:bold;color:#000;font-size:24px;box-shadow:0 0 15px rgba(255,215,0,0.5)}
 .logo h3{color:#FFD700;font-size:20px}
 .us-tag{font-size:11px;color:#fff;background:#002868;padding:3px 8px;border-radius:10px;margin-left:5px}
 nav a{color:#FFD700;margin:0 12px;text-decoration:none;font-weight:bold}
@@ -27,12 +27,23 @@ h2{font-size:36px;text-align:center;margin-bottom:40px;background:linear-gradien
 .live-dot{display:inline-block;width:10px;height:10px;background:#00ff88;border-radius:50%;margin-right:8px;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
-.card{background:#1a1a1a;border:1px solid #333;padding:30px;border-radius:20px;text-align:center}
+.card{background:#1a1a1a;border:1px solid #333;padding:30px;border-radius:20px;text-align:center;transition:0.3s}
+.card:hover{border-color:#FFD700;transform:translateY(-5px)}
 .plan-pro{border:2px solid #FFD700;transform:scale(1.05)}
 .plan-price{font-size:36px;font-weight:bold;color:#FFD700;margin:15px 0}
 .features{list-style:none;text-align:left;margin:20px 0}
 .features li{padding:10px 0;color:#ccc;border-bottom:1px dashed #333}
 .features li:before{content:"✓ ";color:#FFD700}
+
+/* PAYMENT SECTION */
+.payment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:40px}
+.payment-card{background:#111;border:2px solid #333;padding:25px;border-radius:15px;text-align:center}
+.payment-card h3{color:#FFD700;margin-bottom:15px}
+.payment-icon{font-size:50px;margin-bottom:15px}
+.wallet-box{background:#0A0A0A;border:1px dashed #FFD700;padding:15px;border-radius:10px;margin:15px 0;word-break:break-all;font-size:14px;color:#FFD700}
+.copy-btn{background:#FFD700;color:#000;border:none;padding:10px 20px;border-radius:8px;font-weight:bold;cursor:pointer;margin-top:10px}
+.note{background:#1a1a1a;border-left:4px solid #FFD700;padding:20px;margin:30px 0;border-radius:10px;color:#ccc}
+
 footer{text-align:center;padding:40px;background:#111;border-top:2px solid #FFD700;color:#888}
 @media(max-width:768px){nav{display:none}}
 </style>
@@ -46,17 +57,25 @@ s1.src='https://embed.tawk.to/605165194/default';
 s1.charset='UTF-8';s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
+
+function copyWallet(id) {
+  var copyText = document.getElementById(id);
+  navigator.clipboard.writeText(copyText.innerText);
+  alert("Wallet copied: " + copyText.innerText);
+}
 </script>
 </head>
 <body>
 
 <header>
   <div class="logo">
-    <img src="logo.png" alt="Logo">
+    <div class="logo-icon">Z</div>
     <h3>Ziterainvestment<span class="us-tag">🇺🇸 USA</span></h3>
   </div>
   <nav>
-    <a href="index.html">Home</a>
+    <a href="#stats">Stats</a>
+    <a href="#plans">Plans</a>
+    <a href="#payment">Deposit</a>
     <a href="about.html">About</a>
   </nav>
 </header>
@@ -64,7 +83,7 @@ s0.parentNode.insertBefore(s1,s0);
 <div class="hero">
   <h1>Ziterainvestment</h1>
   <p>Grow Your Money Daily. Secure. Fast. Trusted.</p>
-  <a href="#stats" class="btn">🚀 Start Investing Now</a>
+  <a href="#plans" class="btn">🚀 Start Investing Now</a>
 </div>
 
 <div class="container" id="stats">
@@ -80,12 +99,25 @@ s0.parentNode.insertBefore(s1,s0);
 <div class="container" id="plans">
   <h2>Investment Plans</h2>
   <div class="grid">
-    <div class="card"><h3>Starter Plan</h3><div class="plan-price">$50</div><ul class="features"><li>3% Daily Profit</li><li>7 Days Duration</li><li>Instant Withdrawal</li></ul><a href="#" class="btn">Invest Now</a></div>
-    <div class="card plan-pro"><h3>Pro Plan</h3><div class="plan-price">$200</div><ul class="features"><li>5% Daily Profit</li><li>14 Days Duration</li><li>Priority Support</li></ul><a href="#" class="btn">Invest Now</a></div>
-    <div class="card"><h3>VIP Plan</h3><div class="plan-price">$1000</div><ul class="features"><li>8% Daily Profit</li><li>30 Days Duration</li><li>VIP Support</li></ul><a href="#" class="btn">Invest Now</a></div>
+    <div class="card"><h3>Starter Plan</h3><div class="plan-price">$50</div><ul class="features"><li>3% Daily Profit</li><li>7 Days Duration</li><li>Instant Withdrawal</li></ul><a href="#payment" class="btn">Invest Now</a></div>
+    <div class="card plan-pro"><h3>Pro Plan</h3><div class="plan-price">$200</div><ul class="features"><li>5% Daily Profit</li><li>14 Days Duration</li><li>Priority Support</li></ul><a href="#payment" class="btn">Invest Now</a></div>
+    <div class="card"><h3>VIP Plan</h3><div class="plan-price">$1000</div><ul class="features"><li>8% Daily Profit</li><li>30 Days Duration</li><li>VIP Support</li></ul><a href="#payment" class="btn">Invest Now</a></div>
   </div>
 </div>
 
-<footer><p>© 2026 Ziterainvestment LLC. Registered in United States. All Rights Reserved.</p></footer>
-</body>
-                                                                                                                                                          </html>
+<!-- PAYMENT SECTION -->
+<div class="container" id="payment">
+  <h2>Deposit Funds</h2>
+  <p style="text-align:center;color:#ccc;margin-bottom:30px">Choose your preferred payment method. After payment, contact support to activate your plan.</p>
+
+  <div class="payment-grid">
+    <div class="payment-card">
+      <div class="payment-icon">₿</div>
+      <h3>Bitcoin BTC</h3>
+      <p>Send BTC to this wallet:</p>
+      <div class="wallet-box" id="btc">bc1qxy2kga5w2zq3wxyz1234567890abcdef</div>
+      <button class="copy-btn" onclick="copyWallet('btc')">Copy Wallet</button>
+    </div>
+
+    <div class="payment-card">
+      <div class="payment-icon">
