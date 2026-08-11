@@ -1,20 +1,35 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login - Wealtace</title><style>
+<!DOCTYPE html><html><head><title>Login - Zitera</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#0A1F44;color:#fff;display:flex;justify-content:center;align-items:center;min-height:100vh}
-.box{background:#1E3A8A;border:3px solid #B22234;padding:40px;border-radius:15px;width:90%;max-width:400px}
-.box h2{text-align:center;color:#B22234;margin-bottom:20px;font-size:28px}
-input{width:100%;padding:15px;margin:10px 0;border-radius:8px;border:2px solid #fff;background:#0A1F44;color:#fff}
-.btn{width:100%;padding:15px;background:#B22234;color:#fff;border:none;border-radius:8px;font-weight:800;font-size:16px;cursor:pointer;margin-top:10px}
-.btn:hover{background:#fff;color:#B22234}
+body{background:#0A1F44;display:flex;justify-content:center;align-items:center;height:100vh}
+.box{background:#1E3A8A;border:3px solid #B22234;padding:40px;border-radius:15px;width:90%;max-width:400px;text-align:center}
+.box h1{color:#fff;margin-bottom:20px} .box span{color:#B22234}
+input{width:100%;padding:14px;margin:10px 0;background:#0A1F44;border:2px solid #B22234;border-radius:8px;color:#fff;font-size:16px}
+.btn{width:100%;padding:14px;background:#B22234;color:#fff;border:none;border-radius:8px;font-weight:800;font-size:16px;cursor:pointer}
+p{color:#fff;margin-top:15px}
 a{color:#B22234;text-decoration:none}
-</style></head>
-<body>
+</style></head><body>
+
 <div class="box">
-  <h2>MEMBER LOGIN</h2>
-  <input type="email" placeholder="Email">
-  <input type="password" placeholder="Password">
-  <button class="btn" onclick="window.location='dashboard.html'">LOGIN</button>
-  <p style="text-align:center;margin-top:15px">No account? <a href="signup.html">Sign Up</a></p>
+  <h1>ZIT<span>ERA</span> LOGIN</h1>
+  <input type="email" id="email" placeholder="Email Address" required>
+  <input type="password" id="password" placeholder="Password" required>
+  <button class="btn" onclick="login()">LOGIN</button>
+  <p>Don't have account? <a href="signup.html">Sign Up</a></p>
 </div>
+
+<script>
+function login(){
+  let email = document.getElementById('email').value;
+  let password = document.getElementById('password').value;
+  
+  if(email == "" || password == ""){ 
+    alert("Please fill all fields"); 
+    return; 
+  }
+  
+  alert("Login successful!");
+  window.location.href = "dashboard.html";
+}
+</script>
 </body></html>
